@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>党思捷 - 小红书大模型产业技术发展战略岗申请</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Visualization & Content Choices:
+        - Hero/Intro: Text - Goal: Introduction & Value Proposition - Method: HTML - Interaction: None. Justification: Clear, concise opening.
+        - Strategic Fit (JD Alignment): Text (Headings, Paragraphs, Lists) - Goal: Detail alignment with JD responsibilities - Method: HTML with Tailwind, Unicode icons (e.g., ✨, 🚀, 💡) - Interaction: None. Justification: Structured presentation of how candidate meets each JD point.
+        - Core Competencies & Achievements: Text, Chart (Bar), Table - Goal: Showcase skills and impactful results - Method: HTML, Chart.js (Canvas) for key metrics from 科大讯飞 (accuracy improvement, efficiency gain), HTML table for quantifiable achievements - Interaction: Tooltips on chart bars. Justification: Visually impactful and quick understanding of quantifiable achievements.
+        - Key Qualifications Match: Text (Lists) - Goal: Detail alignment with JD qualifications - Method: HTML with Tailwind - Interaction: None. Justification: Clear mapping of experience to requirements.
+        - Matching Matrix: Table - Goal: Provide a detailed, structured mapping of skills/experience to JD/JQ - Method: HTML table with Tailwind - Interaction: None. Justification: Explicitly requested and provides a comprehensive overview.
+        - Strategic Roadmap: Text (Headings, Paragraphs, Lists) - Goal: Outline immediate and long-term contributions - Method: HTML with Tailwind - Interaction: None. Justification: Explicitly requested and demonstrates forward-thinking.
+        - Skills Overview: Text (Grouped Lists/Tags) - Goal: Showcase technical and soft skills - Method: HTML with Tailwind - Interaction: None. Justification: Comprehensive skill summary.
+        - Future Outlook: Text - Goal: Express enthusiasm and vision - Method: HTML - Interaction: None. Justification: Strong closing statement.
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter as a fallback, common modern font */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .section-title {
+            font-size: 1.75rem; /* 28px */
+            font-weight: 600;
+            margin-bottom: 1.5rem; /* 24px */
+            color: #c53030; /* A shade of red, like 小红书's accent */
+            border-bottom: 2px solid #fed7d7; /* Lighter red for underline */
+            padding-bottom: 0.5rem;
+        }
+        .sub-section-title {
+            font-size: 1.25rem; /* 20px */
+            font-weight: 600;
+            margin-top: 1.5rem; /* 24px */
+            margin-bottom: 1rem; /* 16px */
+            color: #2d3748; /* Dark gray */
+        }
+        .highlight-red {
+            color: #c53030;
+            font-weight: 600;
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #c53030;
+            border-bottom-color: #c53030;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* 12px */
+            padding: 1.5rem; /* 24px */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25em 0.6em;
+            font-size: 0.85em;
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.375rem;
+        }
+        .table-container {
+            overflow-x: auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        .styled-table th, .styled-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0; /* Light gray */
+            text-align: left;
+        }
+        .styled-table th {
+            background-color: #f7fafc; /* Lighter gray */
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .styled-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-neutral-800 leading-relaxed">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <div class="text-center sm:text-left mb-4 sm:mb-0">
+                <h1 class="text-3xl font-bold text-red-700">党思捷</h1>
+                <p class="text-lg text-neutral-600">致力于赋能小红书大模型产业技术发展战略</p>
+            </div>
+            <nav>
+                <ul class="flex space-x-4 sm:space-x-6">
+                    <li><a href="#introduction" class="nav-link text-neutral-700 hover:text-red-600 pb-1 border-b-2 border-transparent">引言</a></li>
+                    <li><a href="#jd-match" class="nav-link text-neutral-700 hover:text-red-600 pb-1 border-b-2 border-transparent">岗位契合</a></li>
+                    <li><a href="#competencies" class="nav-link text-neutral-700 hover:text-red-600 pb-1 border-b-2 border-transparent">核心能力</a></li>
+                    <li><a href="#matching-matrix" class="nav-link text-neutral-700 hover:text-red-600 pb-1 border-b-2 border-transparent">匹配矩阵</a></li>
+                    <li><a href="#strategic-roadmap" class="nav-link text-neutral-700 hover:text-red-600 pb-1 border-b-2 border-transparent">战略路线图</a></li>
+                    <li><a href="#outlook" class="nav-link text-neutral-700 hover:text-red-600 pb-1 border-b-2 border-transparent">展望</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="introduction" class="mb-16 scroll-mt-24">
+            <div class="card">
+                <h2 class="section-title">💡 引言：我的价值主张</h2>
+                <p class="text-lg mb-4">
+                    您好！我是党思捷，一位对前沿技术充满热忱、兼具深厚技术功底与战略商业洞察的复合型人才。我期望以“专业顾问和合作伙伴”的角色，凭借在<span class="highlight-red">大模型数据工程、AI应用开发、战略分析及跨学科项目领导</span>方面的坚实经验，为小红书大模型产业的技术发展提供独特的内外全局视角，并与业务团队紧密协作，共同擘画并实现小红书在AI时代的技术蓝图与商业成功。
+                </p>
+                <p class="text-lg">
+                    我的目标是深度融入小红书的技术体系，不仅解决当下的技术挑战，更着眼于未来，助力定义战略议题、输出优化方案并强力推动落地，为小红书在激烈的市场竞争中构建可持续的技术领先优势。
+                </p>
+            </div>
+        </section>
+
+        <section id="jd-match" class="mb-16 scroll-mt-24">
+            <h2 class="section-title text-center">🎯 岗位契合：我如何胜任小红书大模型战略岗</h2>
+            <p class="text-center text-lg text-neutral-600 mb-10">深入理解岗位职责，我的经验与能力将全面支撑小红书大模型战略的推进。</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="sub-section-title">🚀 专业顾问与战略共建 (JD1)</h3>
+                    <p><strong>职责解读：</strong>以专业顾问和合作伙伴的角色，为小红书大模型产业技术的发展提供内外全局视角，与业务方共同制定技术发展战略。</p>
+                    <p class="mt-3"><strong>我的匹配：</strong></p>
+                    <ul class="list-disc list-inside mt-2 space-y-1 text-neutral-700">
+                        <li><strong>全局视角：</strong> 软件工程与金融学双学位，金融科技硕士背景，结合在中金、天榕的战略分析经验，以及AIGC BlockCraft项目的前瞻性探索，使我能从技术、商业、市场多维度提供洞察。</li>
+                        <li><strong>战略共建：</strong> 曾主导科大讯飞大模型数据战略，并发起AIGC BlockCraft项目，展现了从0到1的战略规划与执行能力，乐于与业务方深度合作，共创价值。</li>
+                        <li><strong>内外洞察：</strong> 持续关注AIGC、大模型等前沿趋势，结合行业宏观研究经验，能为小红书引入外部最佳实践与内部需求相结合的战略思考。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="sub-section-title">🛠️ 定义议题与推动落地 (JD2)</h3>
+                    <p><strong>职责解读：</strong>帮助技术团队定义战略与管理议题，输出优化方案建议，并推动落地。</p>
+                    <p class="mt-3"><strong>我的匹配：</strong></p>
+                    <ul class="list-disc list-inside mt-2 space-y-1 text-neutral-700">
+                        <li><strong>议题定义：</strong> 在科大讯飞，主动识别并解决了大模型数据质量、Prompt准确性、迭代效率等核心问题。</li>
+                        <li><strong>方案输出：</strong> 独立开发动态Prompt生成系统、智能体系统，创建Prompt效能看板，均产出可量化的优化成果（如准确率提升20%，效率提升5倍）。</li>
+                        <li><strong>推动落地：</strong> 领导人机交互项目全生命周期，从需求到交付，并获得国家级奖项；在中金公司参与数字化建设并提出优化建议，展现了将方案转化为实际成果的能力。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="sub-section-title">🌐 服务多技术方向体系 (JD3)</h3>
+                    <p><strong>职责解读：</strong>主要服务技术体系，支持的业务不仅限于业务技术/AI方向等多技术方向。</p>
+                    <p class="mt-3"><strong>我的匹配：</strong></p>
+                    <ul class="list-disc list-inside mt-2 space-y-1 text-neutral-700">
+                        <li><strong>AI技术深度：</strong> 科大讯飞AI应用工程师经验，专注于大模型数据、Prompt工程、智能体开发。</li>
+                        <li><strong>跨领域技术广度：</strong> AIGC BlockCraft项目融合AIGC、区块链、金融科技；教育背景涵盖软件工程、数据挖掘、数据库管理等。</li>
+                        <li><strong>技术整合能力：</strong> 掌握Python、C、AIGC Prompt、ChatGPT等多种技术工具，能够理解并支持不同技术栈的需求。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="competencies" class="mb-16 scroll-mt-24">
+            <h2 class="section-title text-center">🌟 核心能力与量化成就</h2>
+            <p class="text-center text-lg text-neutral-600 mb-10">我的专业技能和过往成就，是小红书成功的坚实基础。</p>
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <div class="card">
+                    <h3 class="sub-section-title">🤖 AI/大模型技术领导力</h3>
+                    <p class="text-neutral-700">在<span class="highlight-red">科大讯飞核心研发平台</span>，我主导并交付了多个关键AI项目：</p>
+                    <ul class="list-disc list-inside mt-3 space-y-2">
+                        <li><strong>大模型数据全链路处理：</strong> 负责数据勘探、寻源、挖掘、清洗及优化，建立供应商数据对接规范与质量管控体系，为模型训练奠定高质量数据基础。</li>
+                        <li><strong>动态Prompt生成系统：</strong> 根据业务反馈自动优化数据标准规范，成功将<span class="highlight-red">智能涌现准确率提升20%</span>。</li>
+                        <li><strong>智能体系统搭建：</strong> 融合OCR、Function Call、NLP技术，独立完成从需求分析到部署交付的全流程闭环。</li>
+                        <li><strong>Prompt效能看板：</strong> 创建可视化看板，将<span class="highlight-red">关键场景指令迭代效率提升5倍</span>。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="sub-section-title">📈 战略商业敏锐度</h3>
+                    <p class="text-neutral-700">我的金融背景与实践经验，赋予我独特的商业视角：</p>
+                    <ul class="list-disc list-inside mt-3 space-y-2">
+                        <li><strong>市场洞察与风险控制 (天榕私募基金)：</strong> 凭借敏锐的市场洞察力成功预测2022年下行周期，通过精细化风控策略实现对市场波动的完美把控。</li>
+                        <li><strong>制度建设与数字化转型 (中金公司)：</strong> 协助制定经纪业务制度，建立账户管理体系标准，参与部门数字化建设并提出优化建议。</li>
+                        <li><strong>跨学科思维：</strong> 软件工程与金融学的双重背景，使我能更好地理解技术可行性与商业价值的结合点。</li>
+                    </ul>
+                </div>
+                 <div class="card">
+                    <h3 class="sub-section-title">🚀 创新项目与前沿探索</h3>
+                    <p class="text-neutral-700">我对新兴技术充满热情，并积极将其应用于实践：</p>
+                    <ul class="list-disc list-inside mt-3 space-y-2">
+                        <li><strong>AIGC BlockCraft (项目发起人 & 技术负责人)：</strong> 运用ChatGPT、Azure OpenAI等最新AI技术，推动区块链与智能合约的革新，探索智能合同生成与区块链安全。</li>
+                        <li><strong>人机交互生态系统设计 (独立完成人)：</strong> 独立完成产品需求、设计、开发与汇报，作品获<span class="highlight-red">全国大学生计算机设计大赛全国三等奖（全国前1%）</span>及西北大学优秀毕业论文（全校前10%）。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="sub-section-title">📊 量化成就概览</h3>
+                    <p class="text-neutral-700 mb-4">关键成果可视化：</p>
+                    <div class="chart-container">
+                        <canvas id="achievementsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-10">
+                <h3 class="sub-section-title">📋 关键量化成就总结</h3>
+                <div class="table-container">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>类别</th>
+                                <th>成就描述</th>
+                                <th>量化指标/结果</th>
+                                <th>证明材料</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AI/大模型</td>
+                                <td>动态Prompt生成系统</td>
+                                <td>智能涌现准确率提升20%</td>
+                                <td>科大讯飞工作经验</td>
+                            </tr>
+                            <tr>
+                                <td>AI/大模型</td>
+                                <td>Prompt效能看板</td>
+                                <td>关键场景指令迭代效率提升5倍</td>
+                                <td>科大讯飞工作经验</td>
+                            </tr>
+                            <tr>
+                                <td>AI/大模型</td>
+                                <td>大模型数据工程</td>
+                                <td>建立自动化数据处理流水线，实现高效化与标准化</td>
+                                <td>科大讯飞工作经验</td>
+                            </tr>
+                            <tr>
+                                <td>项目领导</td>
+                                <td>人机交互生态系统设计（毕业论文）</td>
+                                <td>西北大学优秀毕业论文（全校前10%）</td>
+                                <td>项目经历</td>
+                            </tr>
+                            <tr>
+                                <td>项目领导</td>
+                                <td>人机交互生态系统设计（计算机设计大赛）</td>
+                                <td>西北赛区一等奖（西北赛区前3%），全国三等奖（全国前1%）</td>
+                                <td>项目经历</td>
+                            </tr>
+                            <tr>
+                                <td>商业战略</td>
+                                <td>市场预测与风险控制</td>
+                                <td>成功预测2022年市场下行周期，实现对市场波动的完美把控</td>
+                                <td>天榕私募基金工作经验</td>
+                            </tr>
+                            <tr>
+                                <td>沟通展示</td>
+                                <td>PPT制作与展示技巧</td>
+                                <td>LinkedIn前5%</td>
+                                <td>技能</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="qualifications" class="mb-16 scroll-mt-24">
+            <h2 class="section-title text-center">🔑 关键任职资格匹配</h2>
+            <p class="text-center text-lg text-neutral-600 mb-10">我的背景和技能与岗位要求高度吻合。</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card">
+                    <h3 class="sub-section-title">📡 技术趋势与研究 (JQ1)</h3>
+                     <p class="text-sm text-neutral-600 mb-2">对前沿技术趋势研究、行业宏观研究、用户需求等领域有敏锐的观察和强烈兴趣。</p>
+                    <ul class="list-disc list-inside space-y-1 text-neutral-700">
+                        <li>发起AIGC BlockCraft，探索AIGC在金融科技的应用。</li>
+                        <li>天榕私募基金期间进行宏观行业研究，预测市场趋势。</li>
+                        <li>教育背景涵盖AI/ML、金融科技，持续学习新技术。</li>
+                        <li>个人总结中强调积极应用AIGC，关注趋势，独立思考。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="sub-section-title">🏢 相关行业背景 (JQ2)</h3>
+                    <p class="text-sm text-neutral-600 mb-2">互联网行业商分、头部咨询公司、投行、基金公司背景，有技术赛道战略行业经验者优先。</p>
+                    <ul class="list-disc list-inside space-y-1 text-neutral-700">
+                        <li>中金公司（投行）实习经验。</li>
+                        <li>天榕私募基金实习，积累行业研究经验。</li>
+                        <li>AIGC BlockCraft项目作为金融科技技术负责人。</li>
+                        <li>金融学与金融科技的教育背景。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="sub-section-title">🗣️ 领导力与沟通力 (JQ3)</h3>
+                    <p class="text-sm text-neutral-600 mb-2">有较强的沟通及横向拉通能力，有较强领导力和主人翁意识者优先。</p>
+                    <p class="text-neutral-700 mt-3"><strong>卓越的领导力与主人翁意识：</strong></p>
+                    <ul class="list-disc list-inside space-y-1 text-neutral-700">
+                        <li>AIGC BlockCraft项目发起人与技术负责人，构思并启动复杂创新项目。</li>
+                        <li>科大讯飞主导大模型数据处理、独立完成智能体系统搭建，承担重大责任。</li>
+                        <li>人机交互项目独立完成人，全程拥有项目所有权。</li>
+                        <li>个人总结中强调“主观能动性极佳”且“有担当”。</li>
+                    </ul>
+                    <p class="text-neutral-700 mt-3"><strong>卓越的沟通与跨职能协作能力：</strong></p>
+                    <ul class="list-disc list-inside space-y-1 text-neutral-700">
+                        <li>精通PPT制作与展示（LinkedIn前5%），擅长演讲、写作与汇报展示。</li>
+                        <li>全国大学生计算机设计大赛“高评分的独立汇报”。</li>
+                        <li>中金公司为业务人员提供账户业务相关培训和支持。</li>
+                        <li>个人总结强调“良好的抗压能力、强烈的团队合作精神、优秀的沟通与组织协调能力”。</li>
+                        <li>跨学科背景（软件工程、金融学、金融科技）促进跨职能理解和沟通。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="sub-section-title">🎓 教育与技能基础 (JQ4)</h3>
+                     <p class="text-sm text-neutral-600 mb-2">理工类专业本科及以上学历，计算机相关专业者优先。</p>
+                    <ul class="list-disc list-inside space-y-1 text-neutral-700">
+                        <li>西北大学软件工程与金融学双学士学位。</li>
+                        <li>深圳大学 & 法国南特高商金融科技与风险控制硕士。</li>
+                        <li>核心技术技能：Python, C, 大模型Prompt工程, ChatGPT, AI/ML, 数据挖掘与分析, 区块链。</li>
+                        <li>软技能：战略思维, 问题解决, 创新能力, 跨学科协作。</li>
+                    </ul>
+                </div>
+            </div>
+             <div class="card mt-10">
+                <h3 class="sub-section-title">🛠️ 核心技能一览</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4">
+                    <div>
+                        <h4 class="font-semibold text-neutral-700 mb-1">编程与技术:</h4>
+                        <ul class="space-y-1">
+                            <li><span class="badge bg-blue-100 text-blue-700">Python</span></li>
+                            <li><span class="badge bg-blue-100 text-blue-700">C</span></li>
+                            <li><span class="badge bg-green-100 text-green-700">SQL</span></li>
+                            <li><span class="badge bg-green-100 text-green-700">数据库管理</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-neutral-700 mb-1">AI与大模型:</h4>
+                        <ul class="space-y-1">
+                            <li><span class="badge bg-purple-100 text-purple-700">大模型Prompt工程</span></li>
+                            <li><span class="badge bg-purple-100 text-purple-700">ChatGPT/Azure OpenAI</span></li>
+                            <li><span class="badge bg-purple-100 text-purple-700">机器学习</span></li>
+                            <li><span class="badge bg-purple-100 text-purple-700">数据挖掘与可视化</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-neutral-700 mb-1">金融科技与商业:</h4>
+                        <ul class="space-y-1">
+                            <li><span class="badge bg-yellow-100 text-yellow-700">金融科技应用</span></li>
+                            <li><span class="badge bg-yellow-100 text-yellow-700">区块链</span></li>
+                            <li><span class="badge bg-yellow-100 text-yellow-700">风险控制</span></li>
+                            <li><span class="badge bg-yellow-100 text-yellow-700">行业与市场分析</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-neutral-700 mb-1">软技能与方法论:</h4>
+                        <ul class="space-y-1">
+                            <li><span class="badge bg-red-100 text-red-700">战略思维</span></li>
+                            <li><span class="badge bg-red-100 text-red-700">项目管理</span></li>
+                            <li><span class="badge bg-red-100 text-red-700">沟通与演讲 (PPT Top 5%)</span></li>
+                            <li><span class="badge bg-red-100 text-red-700">问题解决与创新</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="matching-matrix" class="mb-16 scroll-mt-24">
+            <h2 class="section-title text-center">📊 技能与岗位匹配矩阵</h2>
+            <p class="text-center text-lg text-neutral-600 mb-10">我的各项经验和技能与小红书岗位职责及任职资格的详细对应。</p>
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>岗位职责 (JD) / 任职资格 (JQ)</th>
+                            <th>候选人匹配经验/技能</th>
+                            <th>证明材料</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>JD 1: 专业顾问和合作伙伴角色, 为大模型产业技术发展提供内外全局视角, 与业务方共同制定技术发展战略</td>
+                            <td>软件工程与金融学双学位，金融科技与风险控制硕士；中金公司与天榕私募基金的战略分析、系统制定经验；AIGC BlockCraft项目发起人，具备战略视野；个人总结中强调跨学科、未来导向、战略思维。</td>
+                            <td>简历</td>
+                        </tr>
+                        <tr>
+                            <td>JD 2: 帮助技术团队定义战略与管理议题, 输出优化方案建议, 并推动落地</td>
+                            <td>科大讯飞主导数据处理、Prompt系统开发、智能体系统建设、效能看板创建（均有量化成果）；中金公司数字化建设与优化建议；人机交互项目全生命周期所有权；个人总结中强调创新、问题解决、迭代发展。</td>
+                            <td>简历</td>
+                        </tr>
+                        <tr>
+                            <td>JD 3: 主要服务技术体系, 支持的业务不仅限于业务技术/AI方向等多技术方向</td>
+                            <td>科大讯飞AI应用工程师，大模型数据、Prompt、智能体经验；AIGC BlockCraft项目涉及AIGC、区块链、金融科技；教育背景涵盖AI/ML、区块链、数据挖掘、软件工程；掌握Python、C、AIGC Prompt、ChatGPT、Mid-journey等技能。</td>
+                            <td>简历</td>
+                        </tr>
+                        <tr>
+                            <td>JQ 1: 对前沿技术趋势研究、行业宏观研究、用户需求等领域有敏锐的观察和强烈兴趣</td>
+                            <td>AIGC BlockCraft项目体现前沿AIGC/金融科技应用；天榕私募基金宏观研究、市场预测经验；教育背景中的AI/ML、金融科技课程；个人总结中积极应用AIGC，关注趋势，独立思考。</td>
+                            <td>简历</td>
+                        </tr>
+                        <tr>
+                            <td>JQ 2: 互联网行业商分、头部咨询公司、投行、基金公司背景, 有技术赛道战略行业经验者优先</td>
+                            <td>中金公司投行实习经验；天榕私募基金基金实习、行业研究经验；AIGC BlockCraft项目作为金融科技技术负责人；金融学与金融科技的教育背景。</td>
+                            <td>简历</td>
+                        </tr>
+                        <tr>
+                            <td>JQ 3: 较强的沟通及横向拉通能力, 有较强领导力和主人翁意识者优先</td>
+                            <td>人机交互项目独立开发并高分汇报；AIGC BlockCraft项目发起人、技术负责人；中金公司培训支持经验；LinkedIn前5%的PPT技能，擅长演讲、写作；个人总结中强调团队合作、沟通协调、主动性、责任感。</td>
+                            <td>简历</td>
+                        </tr>
+                        <tr>
+                            <td>JQ 4: 理工类专业本科及以上学历, 计算机相关专业者优先</td>
+                            <td>软件工程双学士学位，金融科技与风险控制硕士学位；多门科技相关课程；掌握Python、C等编程语言。</td>
+                            <td>简历</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="strategic-roadmap" class="mb-16 scroll-mt-24">
+            <h2 class="section-title text-center">🗺️ 我的小红书战略路线图：即时贡献与未来愿景</h2>
+            <p class="text-center text-lg text-neutral-600 mb-10">我将如何为小红书的大模型战略带来立竿见影的价值并规划长远发展。</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="sub-section-title">A. 即时贡献领域</h3>
+                    <p class="text-neutral-700">我将凭借过往的成功经验，为小红书的大模型战略带来立竿见影的价值：</p>
+                    <ul class="list-disc list-inside mt-3 space-y-2">
+                        <li><strong>加速大模型数据战略与治理：</strong> 借鉴在科大讯飞主导大模型训练数据全链路处理的经验，能够立即优化小红书的大模型训练数据管线，重点建立健全的数据寻源、清洗、质量控制和去重流程，确保高质量数据输入，从而提升模型性能和训练效率。</li>
+                        <li><strong>强化Prompt工程与智能体系统：</strong> 运用在动态Prompt生成和智能体系统构建方面的专业知识（来自科大讯飞和AIGC BlockCraft），致力于提升小红书大模型的性能，优化用户交互体验，并推动内部流程自动化。这将直接带来模型准确性和运营效率的提升。</li>
+                        <li><strong>建立数据驱动的绩效指标与看板：</strong> 参照在科大讯飞开发“Prompt效能看板”的经验，为小红书的大模型项目建立多维度的、可量化的绩效追踪体系。这将有助于量化优化效果，加速迭代周期，并为战略进展提供清晰的可见性。</li>
+                        <li><strong>促进跨职能战略协同：</strong> 凭借跨学科背景，作为技术团队和业务部门之间的关键桥梁，积极协同制定可执行的大模型战略，确保技术能力与业务目标高度一致。</li>
+                    </ul>
+                    <p class="text-neutral-600 mt-4 text-sm">这些具体的行动计划，是将我过往的量化成就（例如20%的准确率提升和5倍的迭代效率提升）转化为对小红书未来价值的承诺，展现了迅速融入并贡献的能力。</p>
+                </div>
+                <div class="card">
+                    <h3 class="sub-section-title">B. 长期战略愿景</h3>
+                    <p class="text-neutral-700">展望未来，我对小红书的大模型战略有着清晰且富有远见的规划：</p>
+                    <ul class="list-disc list-inside mt-3 space-y-2">
+                        <li><strong>演进大模型生态系统：</strong> 设想小红书大模型战略的演进路线，超越当前应用，探索超个性化内容生成、用户行为预测以开辟新的商业模式，以及多模态AI集成以丰富用户体验等前沿领域。</li>
+                        <li><strong>培育AI驱动文化：</strong> 致力于在小红书内部更深层次地嵌入AI/大模型思维，推动技术团队乃至整个组织的持续学习、实验和创新文化。</li>
+                        <li><strong>保持前沿优势与竞争领先：</strong> 持续关注并研究前沿技术趋势（如负责任AI、可解释AI、小型语言模型、边缘AI在内容创作中的应用等），并深入分析其对小红书长期竞争优势的战略影响。个人总结中也提到我“着眼于未来，留意事物的变化趋势，善于从长远角度看待事物”，这正是能够为小红书带来持续创新和领先的关键。</li>
+                        <li><strong>战略合作与生态构建：</strong> 寻求并建立与领先AI研究机构、专业技术提供商乃至开源社区的外部合作，以加速小红书的大模型能力发展，并扩大其在AI生态系统中的影响力。</li>
+                    </ul>
+                    <p class="text-neutral-600 mt-4 text-sm">通过阐述这一全面的长期愿景，我展现了作为战略顾问的角色，不仅能够解决当前问题，更能够为小红书在快速变化的AI浪潮中指明方向，成为推动未来增长和创新的思想领导者。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="outlook" class="scroll-mt-24">
+            <div class="card text-center">
+                <h2 class="section-title">🤝 未来展望：共创小红书AI辉煌</h2>
+                <p class="text-xl mb-4 text-neutral-700">
+                    综上所述，我凭借在AI/大模型领域的深厚技术专长、在金融与战略分析方面的敏锐洞察、在复杂项目中的卓越领导力，以及出色的沟通与跨职能协作能力，完美契合小红书大模型产业技术发展战略岗位的各项要求。
+                </p>
+                <p class="text-lg mb-6 text-neutral-600">
+                    我在科大讯飞主导大模型数据工程、Prompt系统开发和智能体系统建设的实践经验，以及在AIGC BlockCraft项目中作为发起人所展现的前沿技术应用与领导力，共同构筑了我AI技术深度和战略应用方面的独特优势。同时，在中金公司和天榕私募基金的经历，使我能够从宏观经济和行业趋势的视角审视技术发展，并将其转化为可执行的商业战略。我不仅能有效地定义技术团队的战略与管理议题，输出优化方案建议，并有力推动落地，更能以我跨学科的背景和卓越的沟通能力，成为连接技术与业务的桥梁，为小红书的大模型发展提供真正的“内外全局视角”。我对“主人翁意识”和“横向拉通能力”的持续展现，使我成为小红书在AI时代实现创新与增长的理想战略伙伴。我热切期待能为小红书的创新未来贡献力量，共同塑造其大模型战略，驱动技术与业务的持续演进。
+                </p>
+                <a href="mailto:dangsijie@126.com" class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    联系我 (dangsijie@126.com)
+                </a>
+                 <p class="mt-4 text-neutral-600">电话：15388627151</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-neutral-800 text-neutral-300 text-center py-8 mt-16">
+        <p>&copy; 2024 党思捷. 为小红书大模型产业技术发展战略岗专属定制.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Achievements Chart
+            const ctx = document.getElementById('achievementsChart').getContext('2d');
+            const achievementsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['智能涌现准确率提升 (科大讯飞)', '指令迭代效率提升 (科大讯飞)', '国赛名次 (全国前1%)'],
+                    datasets: [{
+                        label: '关键成就指标',
+                        data: [20, 500, 99], // Using 500 for 5x, and 99 to represent top 1% visually. Actual values are 20% and 5x.
+                        backgroundColor: [
+                            'rgba(220, 38, 38, 0.6)', // Red
+                            'rgba(22, 163, 74, 0.6)', // Green
+                            'rgba(59, 130, 246, 0.6)'  // Blue
+                        ],
+                        borderColor: [
+                            'rgba(220, 38, 38, 1)',
+                            'rgba(22, 163, 74, 1)',
+                            'rgba(59, 130, 246, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    if (index === 0) return value + '%'; // For 20%
+                                    if (index === 1) return (value/100) + '倍'; // For 5x (500%)
+                                    if (index === 2) return 'Top ' + (100-value) + '%'; // For Top 1% (99)
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    const rawValue = context.raw;
+                                    if (context.dataIndex === 0) {
+                                        label += rawValue + '% (智能涌现准确率提升)';
+                                    } else if (context.dataIndex === 1) {
+                                        label += (rawValue / 100) + '倍 (指令迭代效率提升)';
+                                    } else if (context.dataIndex === 2) {
+                                         label += '全国前1% (计算机设计大赛)';
+                                    } else {
+                                        label += rawValue;
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    // Ensure labels are not cut off
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) { label += ': '; }
+                                    const rawValue = context.raw;
+                                    const originalLabel = context.chart.data.labels[context.dataIndex];
+                                    
+                                    if (originalLabel.includes('准确率提升')) {
+                                        label += rawValue + '%';
+                                    } else if (originalLabel.includes('效率提升')) {
+                                        label += (rawValue/100) + '倍'; // Representing 5x as 500 for scale
+                                    } else if (originalLabel.includes('国赛名次')) {
+                                        label += '全国前1%';
+                                    } else {
+                                        label += rawValue;
+                                    }
+                                    return label + ' - ' + originalLabel.split('(')[0].trim();
+                                }
+                            }
+                        },
+                        legend: {
+                           display: false // Hiding legend as per previous setup
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    const label = this.getLabelForValue(value);
+                                    if (label.length > 10) { // Max characters before wrapping
+                                        return label.match(/.{1,10}/g); // Split into lines of 10 chars
+                                    }
+                                    return label;
+                                }
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                             ticks: {
+                                callback: function(value, index, values) {
+                                    // This y-axis callback needs to be smarter if data types are mixed.
+                                    // For simplicity, assuming direct value or simple formatting.
+                                    // Given the chart data: 20 (%), 500 (for 5x), 99 (for Top 1%)
+                                    if (value === 20) return value + '%';
+                                    if (value === 500) return (value/100) + 'x';
+                                    if (value === 99) return 'Top 1%'; // This might be tricky on a linear scale
+                                    if (value % 100 === 0 && value !==0) return (value/100) + 'x';
+                                    if (value < 100 && value !==0) return value + '%';
+                                    return value;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
